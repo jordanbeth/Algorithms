@@ -14,6 +14,7 @@ For s = "CodefightsIsAwesome" and x = "IsA", the output should be
 strstr(s, x) = 10.
 =end
 
+
 def strstr(s, x)
   x_length = x.length
   boundary = s.length - x_length + 1
