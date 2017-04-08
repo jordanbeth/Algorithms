@@ -7,7 +7,7 @@ Problem
 
 - If there are no occurrences of x in s, return -1.
 
-examples: 
+examples:
 For s = "CodefightsIsAwesome" and x = "IA", the output should be
 strstr(s, x) = -1;
 For s = "CodefightsIsAwesome" and x = "IsA", the output should be
@@ -16,15 +16,19 @@ strstr(s, x) = 10.
 
 def strstr(s, x)
   x_length = x.length
-  s_array = s.split("")
+  boundary = s.length - x_length + 1
+  first_x = x[0]
+  second_x = x[1]
+  i = 0
 
-  s_array.each_with_index do |char, idx|
-    if (char == x[0])
-      search_me = s_array[idx...idx+x_length]
-      if search_me.join("") == x
-        return idx
+  while (i < boundary)
+    if (s[i] == first_x) && (s[i+1] == second_x)
+      if (s[i...i+x_length] == x)
+        return i
       end
     end
+    i += 1
   end
+
   return -1
 end
