@@ -16,16 +16,16 @@ Example
 */
 
 function reachNextLevel(experience, threshold, reward) {
-  var monsterKilled = false;
+    var monsterKilled = false;
 
-  if (reward){
-    monsterKilled = true;
-    experience += reward;
-  }
+    if (reward) {
+        monsterKilled = true;
+        experience += reward;
+    }
 
-  if (experience >= threshold) {
-    return true;
-  }else{
-    return false;
-  }
+    if (experience >= threshold) {
+        return true;
+    } else {
+        return false;
+    }
 }

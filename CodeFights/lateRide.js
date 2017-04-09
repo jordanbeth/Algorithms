@@ -23,19 +23,19 @@ lateRide(n) = 14.
 808 minutes mean that it's 13:28 now, so the answer should be 1 + 3 + 2 + 8 = 14
 */
 
-function lateRide(n){
-  var sum = 0;
-  var mins = n % 60;
-  if (n > 60) {
-    var hours = n / 60;
-  }
-  while (mins) {
-    sum += mins % 10;
-    mins = Math.floor(mins / 10);
-  }
-  while (hours){
-    sum += hours % 10;
-    hours = Math.floor(hours / 10);
-  }
-  return Math.floor(sum);
+function lateRide(n) {
+    var sum = 0;
+    var mins = n % 60;
+    if (n > 60) {
+        var hours = n / 60;
+    }
+    while (mins) {
+        sum += mins % 10;
+        mins = Math.floor(mins / 10);
+    }
+    while (hours) {
+        sum += hours % 10;
+        hours = Math.floor(hours / 10);
+    }
+    return Math.floor(sum);
 }
