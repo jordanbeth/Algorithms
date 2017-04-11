@@ -27,6 +27,16 @@ def card_converter(cards)
   end
 end
 
+def high_card(converted_cards)
+  converted_cards.max
+end
+
+def one_pair(converted_cards)
+  converted_cards.each { |card| return true if converted_cards.count(card) == 2 }
+
+  false
+end
+
 def two_pair(converted_cards)
   pair_cards = []
   converted_cards.each do |card|
@@ -34,7 +44,7 @@ def two_pair(converted_cards)
       pair_cards << card
     end
   end
-  
+
   pair_cards.size == 4 ? true : false
 end
 

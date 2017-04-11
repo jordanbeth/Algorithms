@@ -9,6 +9,30 @@ describe ".card_converter" do
   end
 end
 
+describe ".high_card" do
+  it "returns the highest card (8) in the hand" do
+    cards = [2, 6, 7, 4, 8]
+    expect(high_card(cards)).to be 8
+  end
+
+  it "returns the highest card (14) in the hand" do
+    cards = [14, 3, 10, 11, 5]
+    expect(high_card(cards)).to be 14
+  end
+end
+
+describe ".one_pair" do
+  it "returns TRUE when there is one pair" do
+    cards = [4, 3, 9, 4, 14]
+    expect(one_pair(cards)).to be true
+  end
+
+  it "returns FALSE when there is NOT one pair" do
+    cards = [4, 3, 9, 6, 14]
+    expect(one_pair(cards)).to be false
+  end
+end
+
 describe ".two_pair" do
   it "returns TRUE when there are two pair" do
     cards = [2, 2, 12, 7, 12]
@@ -17,7 +41,7 @@ describe ".two_pair" do
 
   it "returns FALSE when there are NOT two pair" do
     cards = [2, 5, 11, 7, 2]
-    expect(three_of_a_kind(cards)).to be false
+    expect(two_pair(cards)).to be false
   end
 end
 
