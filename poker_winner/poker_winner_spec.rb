@@ -1,5 +1,53 @@
 require_relative 'poker_winner'
 
+describe ".poker_winner" do
+
+  context "a player wins with a royal flush" do
+    it "returns 1 because player 1 had the royal flush and 2 did not" do
+      player1 = ["QD", "JD", "TD", "AD", "KD"]
+      player2 = ["JS", "TC", "QH", "2H", "4C"]
+      expect(poker_winner(player1, player2)).to eq "player 1 wins"
+    end
+
+    it "returns 1 because player 1 had the royal flush and 1 did not" do
+      player2 = ["QD", "JD", "TD", "AD", "KD"]
+      player1 = ["JS", "JC", "JH", "2H", "2C"]
+      expect(poker_winner(player1, player2)).to eq "player 2 wins"
+    end
+  end
+
+  context "a player wins with a straight flush" do
+    it "player 1 has the straight flush and 2 did not" do
+      player1 = ["6D", "4D", "7D", "5D", "3D"]
+      player2 = ["JS", "2C", "QH", "2H", "4C"]
+      expect(poker_winner(player1, player2)).to eq "player 1 wins"
+    end
+
+    it "player 2 has the straight flush and 1 did not" do
+      player2 = ["QD", "JD", "TD", "AD", "KD"]
+      player1 = ["JS", "JC", "JH", "2H", "2C"]
+      expect(poker_winner(player1, player2)).to eq "player 2 wins"
+    end
+  end
+
+  context "a player wins with four of a kind" do
+    it "player 1 has the four of a kind and 2 did not" do
+      player1 = ["4D", "4C", "4S", "5D", "4H"]
+      player2 = ["JS", "2C", "QH", "2H", "4C"]
+      expect(poker_winner(player1, player2)).to eq "player 1 wins"
+    end
+
+    it "player 2 had the four of a kind and 1 did not" do
+      player2 = ["4D", "4C", "4S", "5D", "4H"]
+      player1 = ["JS", "2C", "QH", "2H", "4C"]
+      expect(poker_winner(player1, player2)).to eq "player 2 wins"
+    end
+  end
+
+
+
+end
+
 describe ".card_converter" do
   it "return the hand of cards represented as integers" do
     cards = ["QD", "JD", "TD", "AD", "KD"]
