@@ -13,7 +13,7 @@ solveEquation(s,r) = "6y-12".
 "3x + 2y + -4=0" ⇒ "3x=-2y+4" ⇒ "-3x=2y-4", which means that "-9x=6y-12
 =end
 # Works in general cases.. revisit
-def solveEquation(s, r)
+def solve_equation(s, r)
   a = /(\W?\d*)x/.match(s)[1].to_i.to_f
   b = /(\W?\d*)y/.match(s)[1].to_i.to_f
   c = s.scan(/([-+]\d)/)[1][0].to_i.to_f

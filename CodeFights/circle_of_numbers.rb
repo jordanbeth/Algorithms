@@ -10,6 +10,6 @@ For n = 10 and firstNumber = 2, the output should be
 circleOfNumbers(n, firstNumber) = 7
 =end
 
-def circleOfNumbers(n, firstNumber)
+def circle_of_numbers(n, firstNumber)
   (firstNumber + n / 2) % n
 end

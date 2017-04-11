@@ -19,7 +19,7 @@ matrix = [[0, 1, 1, 2],
 output: matrixElementsSum(matrix) = 9
 =end
 
-def matrixElementsSum(matrix)
+def matrix_elements_sum(matrix)
     transpose = matrix.transpose
     total = []
     i = 0

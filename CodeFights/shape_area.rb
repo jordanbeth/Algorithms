@@ -1,5 +1,5 @@
 =begin
-Problem: shapeArea 
+Problem: shapeArea
 
 Below we will define an n-interesting polygon.
 
@@ -11,7 +11,7 @@ Below we will define an n-interesting polygon.
 - You can see the 1-, 2-, 3- and 4-interesting polygons in the picture below. **NOT INCLUDED HERE**
 =end
 
-def shapeArea(n)
+def shape_area(n)
     # n^2 + (n-1)^1
     n**2 + (n-1)**2
 end

@@ -1,4 +1,4 @@
-def almostIncreasingSequence(s)
+def almost_increasing_sequence(s)
     return false if s.length < 2
     return true if s.length == 2
 

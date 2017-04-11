@@ -9,7 +9,7 @@ Given a divisor and a bound, find the largest integer N such that:
 It is guaranteed that such a number exists.
 =end
 
-def maxMultiple(divisor, bound)
+def max_multiple(divisor, bound)
   while bound
     return bound if bound % divisor == 0
     bound -= 1
