@@ -1,4 +1,4 @@
-# Implemented the logic to determine winner of a game of 5 card poker
+# Implemented the algorithms to determine winner of a game of 5 card poker
 
 def poker_winner(player1, player2)
   # call flush first to see
