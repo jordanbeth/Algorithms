@@ -59,14 +59,28 @@ end
 
 describe ".straight_flush" do
   it "returns TRUE when the hand is a straight flush" do
-    cards = ["QD", "JD", "TD", "AD", "KD"]
-    converted_cards = [12, 11, 10, 14, 13]
+    cards = ["6D", "7D", "8D", "5D", "9D"]
+    converted_cards = [6, 7, 8, 5, 9]
     expect(straight_flush(cards, converted_cards)).to be true
   end
 
-  it "return FALSE when the hand is not a straight flush" do
-
+  it "returns FALSE when the hand is NOT a straight flush" do
+    cards = ["6D", "7S", "8D", "5D", "9D"]
+    converted_cards = [6, 7, 8, 5, 9]
+    expect(straight_flush(cards, converted_cards)).to be false
   end
 end
 
 describe ".royal_flush" do
+  it "returns TRUE when the hand is a royal flush" do
+    cards = ["QD", "JD", "TD", "AD", "KD"]
+    converted_cards = [12, 11, 10, 14, 13]
+    expect(royal_flush(cards, converted_cards)).to be true
+  end
+
+  it "returns FALSE when the hand in NOT a royal flush" do
+    cards = ["QH", "JD", "TD", "AD", "KD"]
+    converted_cards = [12, 11, 10, 14, 13]
+    expect(royal_flush(cards, converted_cards)).to be false
+  end
+end
