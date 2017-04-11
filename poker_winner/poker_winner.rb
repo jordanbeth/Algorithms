@@ -1,5 +1,4 @@
 # Implemented the algorithms to determine winner of a game of 5 card poker
-require 'pry'
 
 def card_converter(cards)
   cards.map do |card|
