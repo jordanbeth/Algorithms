@@ -9,10 +9,8 @@ Problem Poker Winner
 player1 = ["QD", "JD", "TD", "AD", "KD"]
 player2 = ["JS", "TC", "QH", "2H", "4C"]
 pokerWinner(player1, player2) = 1
-
-
-
-
 =end
 
-def poker_winner
+def poker_winner(player1, player2)
+
+end
