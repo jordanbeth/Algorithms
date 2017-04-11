@@ -9,6 +9,30 @@ describe ".card_converter" do
   end
 end
 
+describe ".two_pair" do
+  it "returns TRUE when there are two pair" do
+    cards = [2, 2, 12, 7, 12]
+    expect(two_pair(cards)).to be true
+  end
+
+  it "returns FALSE when there are NOT two pair" do
+    cards = [2, 5, 11, 7, 2]
+    expect(three_of_a_kind(cards)).to be false
+  end
+end
+
+describe ".three_of_a_kind" do
+  it "returns TRUE when there is three of a kind" do
+    cards = [5, 5, 6, 7, 5]
+    expect(three_of_a_kind(cards)).to be true
+  end
+
+  it "returns FALSE when there is NOT three of a kind" do
+      cards = [5, 5, 6, 7, 9]
+    expect(three_of_a_kind(cards)).to be false
+  end
+end
+
 describe ".flush" do
   it "returns TRUE if the cards are all of the same suit" do
     cards = ["QD", "JD", "TD", "AD", "KD"]

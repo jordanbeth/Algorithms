@@ -27,6 +27,25 @@ def card_converter(cards)
   end
 end
 
+def two_pair(converted_cards)
+  pair_cards = []
+  converted_cards.each do |card|
+    if converted_cards.count(card) == 2
+      pair_cards << card
+    end
+  end
+  
+  pair_cards.size == 4 ? true : false
+end
+
+def three_of_a_kind(converted_cards)
+  converted_cards.each do |card|
+    return true if converted_cards.count(card) == 3
+  end
+
+  false
+end
+
 def straight(converted_cards)
   converted_cards.sort!
   i = 0
@@ -34,11 +53,13 @@ def straight(converted_cards)
     if (converted_cards[i] + 1) != (converted_cards[i + 1]) then return false end
     i += 1
   end
+
  true
 end
 
 def flush(cards)
   cards.each { |card| if cards[0][1] != card[1] then return false end }
+
   true
 end
 
@@ -50,6 +71,7 @@ def four_of_a_kind(converted_cards)
   converted_cards.each do |card|
     return true if converted_cards.count(card) == 4
   end
+
   false
 end
 
