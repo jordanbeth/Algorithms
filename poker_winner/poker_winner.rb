@@ -53,7 +53,6 @@ def straight(converted_cards)
   converted_cards.sort!
   i = 0
   while (i < (converted_cards.size - 1))
-    #binding.pry
     if (converted_cards[i] + 1) != (converted_cards[i + 1]) then return false end
     i += 1
   end
