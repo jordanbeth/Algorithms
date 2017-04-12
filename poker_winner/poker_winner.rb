@@ -155,7 +155,7 @@ def poker_winner(player1, player2)
   if (one_pair1 && !one_pair2) then return "player 1 wins" end
   if (!one_pair1 && one_pair2) then return "player 2 wins" end
 
-  # high-card booleans
+  # high-card numbers
   high_card1 = high_card(converted_cards1);
   high_card2 = high_card(converted_cards2);
 
