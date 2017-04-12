@@ -2,48 +2,145 @@ require_relative 'poker_winner'
 
 describe ".poker_winner" do
 
-  context "a player wins with a royal flush" do
-    it "returns 1 because player 1 had the royal flush and 2 did not" do
+  context "a player wins with a royal-flush" do
+    it "player 1 had a royal flush and 2 does not" do
       player1 = ["QD", "JD", "TD", "AD", "KD"]
       player2 = ["JS", "TC", "QH", "2H", "4C"]
       expect(poker_winner(player1, player2)).to eq "player 1 wins"
     end
 
-    it "returns 1 because player 1 had the royal flush and 1 did not" do
+    it "player 2 has a royal-flush and 1 does not" do
       player2 = ["QD", "JD", "TD", "AD", "KD"]
       player1 = ["JS", "JC", "JH", "2H", "2C"]
       expect(poker_winner(player1, player2)).to eq "player 2 wins"
     end
   end
 
-  context "a player wins with a straight flush" do
-    it "player 1 has the straight flush and 2 did not" do
+  context "a player wins with a straight-flush" do
+    it "player 1 has a straight-flush and 2 does not" do
       player1 = ["6D", "4D", "7D", "5D", "3D"]
       player2 = ["JS", "2C", "QH", "2H", "4C"]
       expect(poker_winner(player1, player2)).to eq "player 1 wins"
     end
 
-    it "player 2 has the straight flush and 1 did not" do
+    it "player 2 has a straight-flush and 1 does not" do
       player2 = ["QD", "JD", "TD", "AD", "KD"]
       player1 = ["JS", "JC", "JH", "2H", "2C"]
       expect(poker_winner(player1, player2)).to eq "player 2 wins"
     end
   end
 
-  context "a player wins with four of a kind" do
-    it "player 1 has the four of a kind and 2 did not" do
+  context "a player wins with four-of-a-kind" do
+    it "player 1 has a four-of-a-kind of a kind and 2 does not" do
       player1 = ["4D", "4C", "4S", "5D", "4H"]
       player2 = ["JS", "2C", "QH", "2H", "4C"]
       expect(poker_winner(player1, player2)).to eq "player 1 wins"
     end
 
-    it "player 2 had the four of a kind and 1 did not" do
+    it "player 2 has a four-of-a-kind and 1 does not" do
       player2 = ["4D", "4C", "4S", "5D", "4H"]
       player1 = ["JS", "2C", "QH", "2H", "4C"]
       expect(poker_winner(player1, player2)).to eq "player 2 wins"
     end
   end
 
+  context "a player wins with a full-house" do
+    it "player 1 has a full-house and 2 does not" do
+      player1 = ["9S", "9D", "4S", "9C", "4H"]
+      player2 = ["JS", "2C", "QH", "2H", "4C"]
+      expect(poker_winner(player1, player2)).to eq "player 1 wins"
+    end
+
+    it "player 2 has a full-house and 1 does not" do
+      player2 = ["9S", "9D", "4S", "9C", "4H"]
+      player1 = ["JS", "2C", "QH", "2H", "4C"]
+      expect(poker_winner(player1, player2)).to eq "player 2 wins"
+    end
+  end
+
+  context "a player wins with a straight" do
+    it "player 1 has a straight and 2 does not" do
+      player1 = ["9S", "9D", "4S", "9C", "4H"]
+      player2 = ["JS", "2C", "QH", "2H", "4C"]
+      expect(poker_winner(player1, player2)).to eq "player 1 wins"
+    end
+
+    it "player 2 has a straight and 1 does not" do
+      player2 = ["9S", "9D", "4S", "9C", "4H"]
+      player1 = ["JS", "2C", "QH", "2H", "4C"]
+      expect(poker_winner(player1, player2)).to eq "player 2 wins"
+    end
+  end
+
+  context "a player wins with a flush" do
+    it "player 1 has a flush and 2 does not" do
+      player1 = ["2C", "14C", "4C", "6C", "5C"]
+      player2 = ["JS", "JC", "JH", "2H", "4S"]
+      expect(poker_winner(player1, player2)).to eq "player 1 wins"
+    end
+
+    it "player 2 has a flush and 1 does not" do
+      player2 = ["2C", "AC", "4C", "6C", "5C"]
+      player1 = ["JS", "JC", "JH", "2H", "4S"]
+      expect(poker_winner(player1, player2)).to eq "player 2 wins"
+    end
+  end
+
+  context "a player wins with three-of-a-kind" do
+    it "player 1 has three of a kind and 2 does not" do
+      player1 = ["7C", "AC", "7D", "7S", "5D"]
+      player2 = ["JS", "5C", "JH", "2H", "5S"]
+      expect(poker_winner(player1, player2)).to eq "player 1 wins"
+    end
+
+    it "player 2 has three-of-a-kind and 1 does not" do
+      player2 = ["7C", "AC", "7D", "7S", "5D"]
+      player1 = ["JS", "5C", "JH", "2H", "5S"]
+      expect(poker_winner(player1, player2)).to eq "player 2 wins"
+    end
+  end
+
+  context "a player wins with two-pair" do
+    it "player 1 has two-pair and 2 does not" do
+      player1 = ["3C", "AC", "KD", "KS", "3D"]
+      player2 = ["4S", "8C", "10H", "JH", "JS"]
+      expect(poker_winner(player1, player2)).to eq "player 1 wins"
+    end
+
+    it "player 2 has two-pair and 1 does not" do
+      player2 = ["3C", "AC", "KD", "KS", "3D"]
+      player1 = ["4S", "8C", "10H", "JH", "JS"]
+      expect(poker_winner(player1, player2)).to eq "player 2 wins"
+    end
+  end
+
+  context "a player wins with one-pair" do
+    it "player 1 has one-pair and 2 does not" do
+      player1 = ["3C", "7C", "KD", "KS", "5D"]
+      player2 = ["4S", "8C", "10H", "2H", "JS"]
+      expect(poker_winner(player1, player2)).to eq "player 1 wins"
+    end
+
+    it "player 2 has one-pair and 1 does not" do
+      player2 = ["3C", "7C", "KD", "KS", "5D"]
+      player1 = ["4S", "8C", "10H", "2H", "JS"]
+      expect(poker_winner(player1, player2)).to eq "player 2 wins"
+    end
+  end
+
+  context "a player wins with a high card" do
+    it "player 1 has the high card and 2 does not" do
+      player1 = ["3C", "7C", "8D", "TD", "5D"]
+      player2 = ["4S", "8C", "6H", "2H", "3S"]
+      expect(poker_winner(player1, player2)).to eq "player 1 wins"
+    end
+
+    it "player 2 has the high card and 1 does not" do
+      player2 = ["3C", "7C", "8D", "TD", "5D"]
+      player1 = ["4S", "8C", "6H", "2H", "3S"]
+      expect(poker_winner(player1, player2)).to eq "player 2 wins"
+    end
+  end
 
 
 end
